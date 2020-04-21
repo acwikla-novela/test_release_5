@@ -10,6 +10,7 @@ export BASE_PATH=$(pwd)
 conda config --set anaconda_upload no
 
 echo "Build missing pypi packages..."
+conda skeleton pypi markdown --version 2.4
 conda skeleton pypi ndx-fllab-novela --version 0.0.7
 echo "Build missing pypi packages..."
 conda skeleton pypi pdoc --version 0.3.2
@@ -19,6 +20,7 @@ echo "Build missing pypi packages..."
 conda skeleton pypi xmldiff --version 2.4
 
 echo "Build missing pypi packages into conda packages..."
+conda build markdown
 conda build ndx-fllab-novela
 conda build pdoc
 conda build rec_to_binaries
@@ -32,9 +34,9 @@ conda convert --platform win-32 $CONDA_BUILD_PATH/linux-64/***.tar.bz2 --output-
 conda convert --platform win-64 $CONDA_BUILD_PATH/linux-64/***.tar.bz2 --output-dir $CONDA_BUILD_PATH -q
 
 echo "Upload  missing pypi packages to anaconda..."
+anaconda upload $CONDA_BUILD_PATH/**/markdown-*.tar.bz2 --force
 anaconda upload $CONDA_BUILD_PATH/**/ndx-fllab-novela-*.tar.bz2 --force
 anaconda upload $CONDA_BUILD_PATH/**/pdoc-*.tar.bz2 --force
-anaconda upload $CONDA_BUILD_PATH/**/pyvalid-*.tar.bz2 --force
 anaconda upload $CONDA_BUILD_PATH/**/rec-to-binaries-*.tar.bz2 --force
 anaconda upload $CONDA_BUILD_PATH/**/xmldiff-*.tar.bz2 --force
 
