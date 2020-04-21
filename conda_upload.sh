@@ -11,8 +11,11 @@ conda config --set anaconda_upload no
 
 echo "Build missing pypi packages..."
 conda skeleton pypi ndx-fllab-novela --version 0.0.7
+echo "Build missing pypi packages..."
 conda skeleton pypi pdoc --version 0.3.2
+echo "Build missing pypi packages..."
 conda skeleton pypi rec_to_binaries --version 0.3.0.dev0
+echo "Build missing pypi packages..."
 conda skeleton pypi xmldiff --version 2.4
 
 echo "Build missing pypi packages into conda packages..."
