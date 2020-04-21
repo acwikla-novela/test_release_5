@@ -39,6 +39,7 @@ requirements:
       - mkl=2019.4
       - mkl-service=2.3.0
       - mountainlab_pytools=0.7.5
+      - markdown=2.4
       - numpy=1.18.1
       - openssl=1.1.1e
       - pandas=1.0.3

@@ -47,6 +47,7 @@ dependencies:
   - wheel=0.34.2
   - xmlschema=1.1.1
   - zlib=1.2.11
+  - markdown=2.4
   - pip:
     - ndx-fllab-novela==0.0.7
     - pdoc==0.3.2
