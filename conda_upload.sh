@@ -1,17 +1,17 @@
 #!/bin/bash
+echo "Conda_upload.sh start..."
 
 export PKG_NAME=test_release_5
-
-conda config --set anaconda_upload no
 export ANACONDA_API_TOKEN=$CONDA_UPLOAD_TOKEN
 export VERSION=$(python setup.py)
 export CONDA_BUILD_PATH=/home/travis/miniconda/envs/test-environment/conda-bld
 export BASE_PATH=$(pwd)
 
+conda config --set anaconda_upload no
+
 echo "Build missing pypi packages..."
 conda skeleton pypi ndx-fllab-novela --version 0.0.7
 conda skeleton pypi pdoc --version 0.3.2
-conda skeleton pypi pyvalid --version 0.9.2
 conda skeleton pypi rec-to-binaries --version 0.3.0.dev0
 conda skeleton pypi xmldiff --version 2.4
 

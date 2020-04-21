@@ -1,4 +1,4 @@
-version = '0.1.001'
+version = '0.1.00'
 print(version)
 
 
