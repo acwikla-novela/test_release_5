@@ -18,7 +18,6 @@ conda skeleton pypi xmldiff --version 2.4
 echo "Build missing pypi packages into conda packages..."
 conda build ndx-fllab-novela
 conda build pdoc
-conda build pyvalid
 conda build rec-to-binaries
 conda build xmldiff
 
