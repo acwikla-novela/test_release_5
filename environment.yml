@@ -48,7 +48,6 @@ dependencies:
   - xmlschema=1.1.1
   - zlib=1.2.11
   - pip:
-    - markdown==2.4
     - ndx-fllab-novela==0.0.7
     - pdoc==0.3.2
     - rec-to-binaries==0.3.0.dev0
