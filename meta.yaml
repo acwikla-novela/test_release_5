@@ -62,7 +62,6 @@ requirements:
       - zlib=1.2.11
       - ndx-fllab-novela==0.0.7
       - pdoc==0.3.2
-      - pyvalid==0.9.2
       - rec-to-binaries==0.3.0.dev0
       - xmldiff==2.4
 
