@@ -28,12 +28,8 @@ echo "Upload  missing pypi packages to anaconda..."
 anaconda upload $CONDA_BUILD_PATH/**/rec_to_binaries-*.tar.bz2 --force
 anaconda upload $CONDA_BUILD_PATH/**/xmldiff-*.tar.bz2 --force
 
-echo "LSSSSSSSSSSSSSSSSSSSSSSSSSSS"
-ls
-ls -l
-
 echo "Building conda package..."
-conda build . --no-include-recipe -c novelakrk || exit 1
+conda build . --no-include-recipe -c novelakrk -c acwikla-novela || exit 1
 
 echo "Move conda package..."
 mv ${CONDA_BUILD_PATH}/linux-64/${PKG_NAME}-${VERSION}-py37_0.tar.bz2  ${CONDA_BUILD_PATH} || exit 1
