@@ -28,6 +28,10 @@ echo "Upload  missing pypi packages to anaconda..."
 anaconda upload $CONDA_BUILD_PATH/**/rec_to_binaries-*.tar.bz2 --force
 anaconda upload $CONDA_BUILD_PATH/**/xmldiff-*.tar.bz2 --force
 
+echo "LSSSSSSSSSSSSSSSSSSSSSSSSSSS"
+ls
+ls -l
+
 echo "Building conda package..."
 conda build . --no-include-recipe -c novelakrk || exit 1
 
@@ -51,11 +55,11 @@ echo "Move conda package to linux dir..."
 mv new_tar/${PKG_NAME}-${VERSION}-py37_0.tar.bz2 linux-64 || exit 1
 
 echo "Converting conda package..."
-conda convert --platform osx-64 $CONDA_BUILD_PATH/linux-64/***.tar.bz2 --output-dir $CONDA_BUILD_PATH -q || exit 1
-conda convert --platform linux-32 $CONDA_BUILD_PATH/linux-64/***.tar.bz2 --output-dir $CONDA_BUILD_PATH -q || exit 1
-conda convert --platform linux-64 $CONDA_BUILD_PATH/linux-64/***.tar.bz2 --output-dir $CONDA_BUILD_PATH -q || exit 1
-conda convert --platform win-32 $CONDA_BUILD_PATH/linux-64/***.tar.bz2 --output-dir $CONDA_BUILD_PATH -q || exit 1
-conda convert --platform win-64 $CONDA_BUILD_PATH/linux-64/***.tar.bz2 --output-dir $CONDA_BUILD_PATH -q || exit 1
+conda convert --platform osx-64 $CONDA_BUILD_PATH/linux-64/${PKG_NAME}-${VERSION}-py37_0.tar.bz2 --output-dir $CONDA_BUILD_PATH -q || exit 1
+conda convert --platform linux-32 $CONDA_BUILD_PATH/linux-64/${PKG_NAME}-${VERSION}-py37_0.tar.bz2 --output-dir $CONDA_BUILD_PATH -q || exit 1
+conda convert --platform linux-64 $CONDA_BUILD_PATH/linux-64/${PKG_NAME}-${VERSION}-py37_0.tar.bz2 --output-dir $CONDA_BUILD_PATH -q || exit 1
+conda convert --platform win-32 $CONDA_BUILD_PATH/linux-64/${PKG_NAME}-${VERSION}-py37_0.tar.bz2 --output-dir $CONDA_BUILD_PATH -q || exit 1
+conda convert --platform win-64 $CONDA_BUILD_PATH/linux-64/${PKG_NAME}-${VERSION}-py37_0.tar.bz2 --output-dir $CONDA_BUILD_PATH -q || exit 1
 
 echo "Deploying to Anaconda.org..."
 anaconda upload $CONDA_BUILD_PATH/**/$PKG_NAME-*.tar.bz2 --force || exit 1
