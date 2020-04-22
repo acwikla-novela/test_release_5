@@ -48,7 +48,7 @@ dependencies:
   - xmlschema=1.1.1
   - zlib=1.2.11
   - pip:
-#    - ndx-fllab-novela==0.0.7
+    - ndx-fllab-novela==0.0.7
     - rec-to-binaries==0.3.0.dev0
     - xmldiff==2.4
 
