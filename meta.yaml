@@ -1,4 +1,4 @@
-{% set data == load_setup_py_data() %}
+{% set data = load_setup_py_data() %}
 
 
 package:
@@ -63,4 +63,3 @@ requirements:
       - zlib==1.2.11
       - rec-to-binaries==0.3.0.dev0
       - xmldiff==2.4
-
