@@ -28,7 +28,7 @@ conda convert --platform win-64 $CONDA_BUILD_PATH/linux-64/***.tar.bz2 --output-
 
 echo "Upload  missing pypi packages to anaconda..."
 ls  $CONDA_BUILD_PATH/linux-64/
-anaconda upload $CONDA_BUILD_PATH/**/rec-to-binaries-*.tar.bz2 --force
+anaconda upload $CONDA_BUILD_PATH/**/rec_to_binaries-*.tar.bz2 --force
 anaconda upload $CONDA_BUILD_PATH/**/xmldiff-*.tar.bz2 --force
 
 echo "Building conda package..."
