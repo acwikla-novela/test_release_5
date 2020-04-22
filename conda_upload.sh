@@ -29,7 +29,7 @@ anaconda upload $CONDA_BUILD_PATH/**/rec_to_binaries-*.tar.bz2 --force
 anaconda upload $CONDA_BUILD_PATH/**/xmldiff-*.tar.bz2 --force
 
 echo "Building conda package..."
-conda build . --no-include-recipe -c novelakrk -c acwikla-novela -c conda-forge || exit 1
+conda build . -c novelakrk -c acwikla-novela -c conda-forge || exit 1
 
 echo "Converting conda package..."
 conda convert --platform osx-64 $CONDA_BUILD_PATH/linux-64/${PKG_NAME}-${VERSION}-py37_0.tar.bz2 --output-dir $CONDA_BUILD_PATH -q || exit 1
