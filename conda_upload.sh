@@ -12,7 +12,7 @@ conda config --set anaconda_upload no
 echo "Build missing pypi packages..."
 conda skeleton pypi rec_to_binaries --version 0.3.0.dev0
 conda skeleton pypi xmldiff --version 2.4
-conda skeleton pypi pyvalid --version 0.9.2
+conda skeleton pypi pyvalid
 
 echo "Build missing pypi packages into conda packages..."
 conda build rec_to_binaries
