@@ -16,6 +16,18 @@ requirements:
       - python==3.7.4
       - pip
       - setuptools
+      - hdmf==1.6.1
+      - libblas==3.8.0
+      - pynwb==1.3.0
+      - testfixtures==6.14.0
+      - vdom==0.6
+      - xmlschema==1.1.1
+      - markdown==2.4
+      - hdf5==1.10.5
+      - liblapack==3.8.0
+      - elementpath==1.4.3
+      - rec-to-binaries==0.3.0.dev0
+      - libcblas==3.8.0
    run:
       - asn1crypto==1.3.0
       - blas==1.0
